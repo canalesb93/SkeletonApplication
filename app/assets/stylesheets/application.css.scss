@@ -16,6 +16,12 @@
  *= require_self
  */
 
+/* Vars */
+$lightGray: #999;
+
+/* Mods */
+
+
 /* Universal */
 
 html {
@@ -23,7 +29,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 65px;
 }
 
 section {
@@ -36,10 +42,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 /* Typography */
@@ -59,7 +64,7 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 30px;
   font-weight: normal;
-  color: #999;
+  color: $lightGray;
 }
 
 p {
@@ -76,10 +81,33 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  font-weight: bold;
+  #logo:hover {
+    text-decoration: none;
+  }
 }
 
-#logo:hover {
-  color: initial;
-  text-decoration: none;
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $lightGray;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }

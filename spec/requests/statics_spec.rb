@@ -2,40 +2,31 @@ require 'rails_helper'
 
 RSpec.describe "Statics pages", :type => :request do
 
-  describe "Home page" do
-    it "should have the base title" do
-      visit'/static/home'
-      expect(page).to have_title("Canales")
-    end
-    it "should not have its title" do
-      visit'/static/home'
-      expect(page).not_to have_title("| Home")
-    end
-    it "should have the content 'Sample App'" do
-      visit '/static/home'
-      expect(page).to have_content('Sample App')
-    end
-  end
+  subject { page }
 
-  describe "Help page" do
-    it "should have the right title" do
-      visit'/static/help'
-      expect(page).to have_title("Help")
-    end
-    it "should have the content 'Help'" do
-      visit '/static/help'
-      expect(page).to have_content('Help')
-    end
+  describe "Home page" do
+    before { visit root_path }
+
+    it { should have_content('Activity Page')}
+    it { should have_title('Canales')}
+    it { should_not have_title('| Home')}
   end
 
   describe "About page" do
+    before { visit about_path}
+
+    it { should have_title('About')}
+    it { should have_content('About me')}
+  end
+
+  describe "Contact page" do
     it "should have the right title" do
-      visit'/static/about'
-      expect(page).to have_title("About")
+      visit contact_path
+      expect(page).to have_title("Contact")
     end
-    it "should have the content 'About Us'" do
-      visit '/static/about'
-      expect(page).to have_content('About Us')
+    it "should have the content 'Contact information'" do
+      visit contact_path
+      expect(page).to have_content('Contact information')
     end
   end
 
