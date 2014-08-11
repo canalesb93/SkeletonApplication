@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
+gem 'bootstrap-sass', '~> 3.2.0'
 # Use sqlite3 as the database for Active Record
 group :development, :tests do
   gem 'sqlite3'
@@ -15,6 +16,7 @@ group :test do
   gem 'spring'
 end
 
+gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
