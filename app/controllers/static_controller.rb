@@ -7,4 +7,9 @@ class StaticController < ApplicationController
 
   def about
   end
+
+  def palindrome?(string)
+    string == string.reverse
+  end
+
 end
