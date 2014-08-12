@@ -93,7 +93,7 @@ require 'rails_helper'
         let(:user_for_invalid_password) { found_user.authenticate("caca") }
 
         it { should_not eq user_for_invalid_password }
-        specify { expect(user_for_invalid_password).to be_false }
+        specify { expect(user_for_invalid_password).to be_falsey }
       end
     end
   end
