@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # match '/home',    to 'static#home',    via: 'get'
   get '/home' => 'static#home'
+  get '/signup' => 'users#new'
   get '/about' => 'static#about'
   get '/contact' => 'static#contact'
   # The priority is based upon order of creation: first created -> highest priority.
