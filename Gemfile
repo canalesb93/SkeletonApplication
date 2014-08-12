@@ -29,9 +29,7 @@ group :doc do
 end
 
 group :production do
-  # start PostgreSQL and static assets gems
-  # gem 'pg' 
-  # gem 'rails_12factor'
-  # end
+  gem 'pg' 
+  gem 'rails_12factor'
 end
 
