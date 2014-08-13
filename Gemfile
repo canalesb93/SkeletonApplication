@@ -15,6 +15,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara', '2.3.0'
   gem 'spring'
+  gem 'factory_girl_rails'
 end
 
 gem 'autoprefixer-rails'

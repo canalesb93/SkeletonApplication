@@ -1,5 +1,11 @@
 <% provide(:title, 'Registration') %>
 <div class="center">
   <h1>Sign up</h1>
-  <p>Find me in app/views/users/new.html.erb</p>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= form_for(@user) do |f| %>
+        <%= f.label :name %>
+      <% end %>
+    </div>
+  </div>
 </div>
