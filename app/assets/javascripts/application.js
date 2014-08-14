@@ -12,9 +12,10 @@
 //
 
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require parsley
 // require parsley_es
-//= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require turbolinks
