@@ -8005,53 +8005,55 @@ button.close {
  *
  *= require_tree .
  *= require_self
+ *= require parsley_validation
+
  */
 /* Vars */
 /* Mods */
 /* Universal */
-/* line 27, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 29, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 html {
   overflow-y: scroll;
 }
 
-/* line 31, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 33, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 body {
   padding-top: 65px;
 }
 
-/* line 35, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 37, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 section {
   overflow: auto;
 }
 
-/* line 39, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 41, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 43, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 45, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 .center {
   text-align: center;
 }
-/* line 45, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 47, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
 /* Typography */
-/* line 52, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 54, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 56, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 58, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
 }
 
-/* line 62, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 64, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -8060,14 +8062,14 @@ h2 {
   color: #999999;
 }
 
-/* line 70, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 72, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
 /* Header */
-/* line 77, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 79, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 #logo {
   float: left;
   margin-right: 10px;
@@ -8076,38 +8078,92 @@ p {
   text-transform: uppercase;
   letter-spacing: -1px;
 }
-/* line 84, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 86, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 #logo #logo:hover {
   text-decoration: none;
 }
 
 /* Footer */
-/* line 91, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 93, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999999;
 }
-/* line 96, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 98, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer a {
   color: #555;
 }
-/* line 98, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 100, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer a:hover {
   color: #222;
 }
-/* line 102, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 104, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer small {
   float: left;
 }
-/* line 105, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 107, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 108, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+/* line 110, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+
+/* miscellaneous */
+/* line 119, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* sidebar */
+/* line 130, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+aside section {
+  padding: 10px 0;
+  border-top: 1px sold #999999;
+}
+/* line 133, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+aside section:first-child {
+  border: 0;
+  padding-top: 0px;
+}
+/* line 137, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+aside section .col-md-4 {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1;
+}
+/* line 142, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+aside section h1 {
+  font-size: 1.4em;
+  text-align: left;
+  letter-spacing: -1px;
+  margin-bottom: 3px;
+  margin-top: 0px;
+}
+
+/* line 152, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* forms */
+/* line 159, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+input {
+  margin-bottom: 15px;
+}
+
+/* line 163, /home/canales/activity_page/app/assets/stylesheets/application.css.scss */
+.long {
+  width: 100%;
 }

@@ -1,28 +1,12 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require parsley_validation
+// Place all the styles related to the Static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
- */
-
-/* Vars */
 $lightGray: #999;
-
-/* Mods */
-
+@import "bootstrap";
+@import "parsley";
+@import "miscellaneous";
+@import "forms";
 
 /* Universal */
 
@@ -114,16 +98,6 @@ footer {
   }
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing(border-box);
-}
-
 /* sidebar */
 
 aside{
@@ -147,19 +121,4 @@ aside{
       margin-top: 0px;
     }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-/* forms */
-
-input {
-  margin-bottom: 15px;
-}
-
-.long {
-  width: 100%;
 }
