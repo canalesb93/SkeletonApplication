@@ -1,16 +1,26 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
+<nav id="navbar" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
     <div class="navbar-header">
-      <%= link_to "canales", '#', id: "logo", class: "navbar-brand" %>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "canales", root_path, id: "logo", class: "navbar-brand" %>
     </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "About", about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign in", '#' %></li>
+        <li class="btn-group btn-toggle hidden-xs" style="margin-top: 11px;">
+          <button id="on-btn"class="btn btn-sm btn-default">Static</button>
+          <button id="off-btn"class="btn btn-sm btn-primary active">Fixed</button>
+        </li>
+        <li><%= link_to "Sign in", signin_path %></li>
       </ul>
     </div>
   </div>
-</header>
+</nav>
