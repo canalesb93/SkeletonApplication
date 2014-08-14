@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bcrypt-ruby'
+#Fun gems
+gem "parsley-rails" #Client side validation
+
 # Use sqlite3 as the database for Active Record
 group :development, :tests do
   gem 'sqlite3'

@@ -14,6 +14,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require parsley_validation
+
  */
 
 /* Vars */
@@ -150,4 +152,14 @@ aside{
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+/* forms */
+
+input {
+  margin-bottom: 15px;
+}
+
+.long {
+  width: 100%;
 }

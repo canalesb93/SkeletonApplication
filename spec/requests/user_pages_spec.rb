@@ -35,7 +35,7 @@ RSpec.describe "Statics pages", :type => :request do
         fill_in "Name", with: "Example User"
         fill_in "Email", with: "uSer@example.com"
         fill_in "Password", with: "foobar"
-        fill_in "Confirmation", wit: "foobar"
+        fill_in "Confirm Password", with: "foobar"
       end
       
       it "should create a user" do
