@@ -10,7 +10,7 @@ gem 'bcrypt-ruby'
 gem "parsley-rails" #Client side validation
 
 # Use sqlite3 as the database for Active Record
-group :development, :tests do
+group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
 end
