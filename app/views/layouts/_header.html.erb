@@ -19,7 +19,22 @@
           <button id="on-btn"class="btn btn-sm btn-default">Static</button>
           <button id="off-btn"class="btn btn-sm btn-primary active">Fixed</button>
         </li>
-        <li><%= link_to "Sign in", signin_path %></li>
+        <% if signed_in? %>
+        <li><%= link_to "Users", '#' %></li>
+        <li id="fat-menu" class="dropdown">
+          <a href='#' class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="dropdown">
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", '#' %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Sign out", signout_path, method: "delete" %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+          <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>  
       </ul>
     </div>
   </div>

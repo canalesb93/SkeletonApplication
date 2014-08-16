@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/home' => 'static#home'
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
-  get '/signout' => 'sessions#destroy'
+  delete '/signout' => 'sessions#destroy'
   get '/about' => 'static#about'
   get '/contact' => 'static#contact'
   # The priority is based upon order of creation: first created -> highest priority.

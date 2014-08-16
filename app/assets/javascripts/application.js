@@ -16,8 +16,8 @@
 //= require jquery_ujs
 //= require parsley
 // require parsley_es
-//= require_tree .
 //= require bootstrap-sprockets
+//= require_tree .
 //= require turbolinks
 $(function(){
   $('.btn-toggle').click(function() {
