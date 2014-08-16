@@ -2,37 +2,65 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1 class="center">Update your profile.</h1>
-    <%= form_for @user, html: { 'data-parsley-validate' => '' } do |f| %>
+    <hr>
+    <div class="row well">
+      <%= gravatar_for @user, size: 150 %>
+      <a href="http://gravatar.com/emails">Change</a>
+    </div>
+    <hr>
+    <%= form_for @user, html: { 'data-parsley-validate' => '', 'id' => 'update_form' } do |f| %>
       <%= render 'shared/error_messages' %>
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control", 
-                              placeholder: "Name",
-                              required: true,
-                              "data-parsley-minlength" => "2",
-                              "data-parsley-trigger" => 'blur' %>
+
+      <div class="input-group">
+        <%= f.text_field :name, class: "form-control", 
+                                placeholder: "Name",
+                                "data-parsley-minlength" => "2",
+                                required: true,
+                                disabled: true,
+                                "data-parsley-group" => 'input1',
+                                "data-parsley-errors-container"=>'#name_error_container',
+                                "data-parsley-trigger" => 'blur' %>
+        <span class="input-group-btn">
+          <span id="edit-name" class="btn btn-primary">Edit</span>
+        </span>
+      </div>
+      <div id="name_error_container"></div>
 
       <%= f.label :email %>
-      <%= f.text_field :email, class: "form-control",
-                               placeholder: "Email",
-                               required: true,
-                               "data-parsley-type" => "email",
-                               "data-parsley-trigger" => 'blur' %>
+      <div class="input-group">
+        <%= f.text_field :email, class: "form-control",
+                                 placeholder: "Email",
+                                 required: true,
+                                 disabled: true,
+                                 "data-parsley-type" => "email",
+                                 "data-parsley-group" => 'input2',
+                                 "data-parsley-errors-container"=>'#email_error_container',
+                                 "data-parsley-trigger" => 'blur' %>
+        <span class="input-group-btn">
+          <span id="edit-email" class="btn btn-primary">Edit</span>
+        </span>
+      </div>
+      <div id="email_error_container"></div> 
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control",
-                                      placeholder: "Password",
-                                      required: true,
-                                      "data-parsley-minlength" => "6",
-                                      "data-parsley-trigger" => 'blur' %>
+      <hr>
+      <div id="update_confirmation" hidden>
+        <div class="alert alert-warning">Please input your password to verify changes.</div>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control",
+                                        placeholder: "Password",
+                                        required: true,
+                                        "data-parsley-minlength" => "6",
+                                        "data-parsley-trigger" => 'blur' %>
 
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: "form-control",
-                                                   placeholder: "Confirm Password",
-                                                   required: true,
-                                                   "data-parsley-minlength" => "6", 
-                                                   "data-parsley-equalto"=>"#user_password", 
-                                                   "data-parsley-trigger" => 'blur' %>
-                                                   
+        <%= f.hidden_field :password_confirmation, class: "form-control",
+                                                     placeholder: "Confirm Password",
+                                                     required: true,
+                                                     "data-parsley-minlength" => "6", 
+                                                     "data-parsley-equalto"=>"#user_password", 
+                                                     "data-parsley-trigger" => 'blur' %>
+                                                     
+      </div>
       <!-- <div class="checkbox">
         <label>
           <input type="checkbox">Recieve friendly emails.
@@ -41,7 +69,5 @@
       <%= f.submit "Save changes", class: "long btn btn-large btn-primary" %>
     <% end %> 
     <hr>
-    <%= gravatar_for @user, size: 100 %>
-    <a href="http://gravatar.com/emails">Change</a>
   </div>
 </div>
