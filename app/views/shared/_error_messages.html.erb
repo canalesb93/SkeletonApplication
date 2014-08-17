@@ -4,9 +4,7 @@
     <!-- The form contains <%= pluralize(@user.errors.count, "error") %>. -->
       <ul class="list-unstyled">
         <% @user.errors.full_messages.each do |msg| %>
-          <% if msg.include?("taken") %> 
-            <li><%= msg %>.</li>
-          <% end %>
+          <li><%= msg %>.</li>
         <% end %>
       </ul>
     </div>

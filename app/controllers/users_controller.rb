@@ -24,11 +24,17 @@ class UsersController < ApplicationController
   end
 
   def update
+    
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
+    if @user.authenticate(user_params[:password]) != false
+      if @user.update_attributes(user_params)
+        flash[:success] = "Profile updated"
+        redirect_to @user
+      else
+        render 'edit'
+      end
     else
+      @user.errors[:base] << "Authentication failed, password incorrect"
       render 'edit'
     end
   end

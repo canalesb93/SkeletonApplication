@@ -4,8 +4,14 @@
     <h1 class="center">Update your profile.</h1>
     <hr>
     <div class="row well">
-      <%= gravatar_for @user, size: 150 %>
-      <a href="http://gravatar.com/emails">Change</a>
+      <div class="col-md-4">
+        <%= gravatar_for @user, size: 150 %>
+      </div>
+      <div class="col-md-8 ">
+        Your avatar is displayed through <abbr title="Globally Recognized Avatar">Gravatar</abbr>, a service which provides your avatars to be associated with your email address.
+        <hr>
+        <a type="button" class="btn btn-default pull-right" href="http://gravatar.com/emails" target="_blank"style="margin-top: 10px;">Change profile picture</a>
+      </div>
     </div>
     <hr>
     <%= form_for @user, html: { 'data-parsley-validate' => '', 'id' => 'update_form' } do |f| %>
@@ -59,7 +65,6 @@
                                                      "data-parsley-minlength" => "6", 
                                                      "data-parsley-equalto"=>"#user_password", 
                                                      "data-parsley-trigger" => 'blur' %>
-                                                     
       </div>
       <!-- <div class="checkbox">
         <label>
