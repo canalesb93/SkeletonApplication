@@ -12,3 +12,17 @@
     }
   }
 }
+
+/* will_paginate */
+
+.pagination {
+  @media (max-width: 480px)
+  {
+    li {
+      display: none;
+      &.active,&.prev,&.next {
+        display: inline;
+      }
+    }
+  }
+}

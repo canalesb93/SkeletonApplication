@@ -20,7 +20,9 @@
           <button id="off-btn"class="btn btn-xs btn-primary active">Fixed</button>
         </li>
         <% if signed_in? %>
-          <li><%= link_to "Users", users_path %></li>
+          <% unless admin_user? %>
+            <li><%= link_to "Users", users_path %></li>
+          <% end %>
           <li id="fat-menu" class="dropdown">
             <a href='#' class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
             <ul class="dropdown-menu" role="dropdown">
