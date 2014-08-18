@@ -15,23 +15,23 @@
         <li><%= link_to "About", about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="btn-group btn-toggle hidden-xs" style="margin-top: 11px;">
-          <button id="on-btn"class="btn btn-sm btn-default">Static</button>
-          <button id="off-btn"class="btn btn-sm btn-primary active">Fixed</button>
+        <li class="btn-group btn-toggle hidden-xs" style="margin-top: 14px;">
+          <button id="on-btn"class="btn btn-xs btn-default">Static</button>
+          <button id="off-btn"class="btn btn-xs btn-primary active">Fixed</button>
         </li>
         <% if signed_in? %>
-        <li><%= link_to "Users", '#' %></li>
-        <li id="fat-menu" class="dropdown">
-          <a href='#' class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="dropdown">
-            <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to "Sign out", signout_path, method: "delete" %>
-            </li>
-          </ul>
-        </li>
+          <li><%= link_to "Users", users_path %></li>
+          <li id="fat-menu" class="dropdown">
+            <a href='#' class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="dropdown">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Sign out", signout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
         <% else %>
           <li><%= link_to "Sign in", signin_path %></li>
         <% end %>  
