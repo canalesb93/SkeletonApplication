@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update, :index]
+  before_action :already_signed_in, only: [:new]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page], :per_page => 10)
   end
 
   def show

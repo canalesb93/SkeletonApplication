@@ -7,6 +7,7 @@ RSpec.describe "AuthenticationPages", :type => :request do
   describe "signin page" do
     before { visit signin_path }
 
+
     it { should have_content('Sign in') }
     it { should have_title('Sign in')}
     
@@ -51,6 +52,20 @@ RSpec.describe "AuthenticationPages", :type => :request do
 
           it "should render the desired protected page" do
             expect(page).to have_title('Edit')
+          end
+
+          describe "when signing in again" do
+            before do
+              click_link "Sign out"
+              visit signin_path
+              fill_in "Email",    with: user.email
+              fill_in "Password", with: user.password
+              click_button "Sign in"
+            end
+
+            it "should render the default (profile) page" do
+              expect(page).to have_title(user.name)
+            end
           end
         end
       end
@@ -101,6 +116,23 @@ RSpec.describe "AuthenticationPages", :type => :request do
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
         specify { expect(response).to redirect_to(root_url) }
+      end
+    end
+
+    describe "for signed-in users" do
+      let(:user) { FactoryGirl.create(:user) }
+      before { sign_in user }
+
+      describe "when attempting to visit a sign-in page" do
+        before { visit signin_path }
+        it { should_not have_content('Sign in') }
+        it { should_not have_title('Sign in')}
+      end
+
+      describe "when attempting to visit a sign-up page" do
+        before { visit signup_path }
+        it { should_not have_content('Sign up') }
+        it { should_not have_title('Registration')}
       end
     end
     

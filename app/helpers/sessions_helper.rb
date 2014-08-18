@@ -11,6 +11,12 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def already_signed_in
+    if signed_in? && current_user.admin == false
+      redirect_to(current_user)
+    end
+  end
+
   def current_user=(user)
     @current_user = user
   end
