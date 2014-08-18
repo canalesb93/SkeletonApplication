@@ -5,16 +5,20 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sprockets'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby'             # Encryption
+gem "faker"                   # Rake sample_data
 #Fun gems
-gem "parsley-rails" #Client side validation
+gem "parsley-rails"           # Client side validation
+#Extras
+gem "will_paginate"           # Paginates, basically all but for first 30
+gem "bootstrap-will_paginate" # Bootstrap css for paginates
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem "better_errors"         # Better errors 
+  gem "binding_of_caller"     # Better errors console
 end
 
 group :test do
