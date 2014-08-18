@@ -6,6 +6,8 @@
     <%= form_for(:session, url: sessions_path, html: { 'data-parsley-validate' => '' }) do |f| %>
       <%= f.text_field :email, class: "form-control", 
                               placeholder: "Email",
+                              "data-parsley-type" => "email",
+                              "data-parsley-trigger" => 'blur',
                               required: true %>
       <%= f.password_field :password, class: "form-control",
                                       placeholder: "Password",
