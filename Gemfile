@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sprockets'
 gem 'bcrypt-ruby'             # Encryption
 gem "faker"                   # Rake sample_data
 #Fun gems

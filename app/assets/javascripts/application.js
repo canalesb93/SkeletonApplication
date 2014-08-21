@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require parsley
 // require parsley_es
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require bootstrap-datepicker
 //= require_tree .
 //= require turbolinks
