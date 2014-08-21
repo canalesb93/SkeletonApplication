@@ -12,6 +12,8 @@
  *
  * require_tree .
  *= require custom
+ *= require bootstrap-datepicker3
  *= require_self
+ 
 
  */
