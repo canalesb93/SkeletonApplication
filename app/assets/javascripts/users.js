@@ -8,17 +8,17 @@ $( document ).ready(function(){
   }
 
   $('#edit-name').click(function() {
-    $('input[name="user[name]"]').prop("disabled", !$('input[name="user[name]"]').prop("disabled"))
+    $('input[name="user[name]"]').prop("disabled", false)
     $('input[name="user[name]"]').focus();
     $('input[name="user[name]"]').val($('input[name="user[name]"]').val())
-    $('#edit-name').toggleClass("active")
+    $('#edit-name').addClass("active")
     showPassword();
   });
   $('#edit-email').click(function() {
-    $('input[name="user[email]"]').prop("disabled", !$('input[name="user[email]"]').prop("disabled"))
+    $('input[name="user[email]"]').prop("disabled", false)
     $('input[name="user[email]"]').focus();
     $('input[name="user[email]"]').val($('input[name="user[email]"]').val())
-    $('#edit-email').toggleClass("active")
+    $('#edit-email').addClass("active")
     showPassword();
   });
 
