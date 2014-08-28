@@ -3,7 +3,7 @@
 ### Summary
 This skeleton application was done with the intent of creating a basic applicaiton fully scalable to a complete application while already including User sessions and authorizations.
 
-####### Includes:
+###### Includes:
 * Users(only model)
 * Sessions and Authorizations (most through session_helper.rb)
 * Admin users
@@ -20,11 +20,10 @@ This skeleton application was done with the intent of creating a basic applicait
 ..* pg and rails_12factor
 
 ###### Notes:
+    ..*Pending*
 
-.css files use .scss 
 
-
-Information:
+###### Information:
 
 * Ruby version is 2.1.2p95
 
