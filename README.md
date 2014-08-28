@@ -10,14 +10,14 @@ This skeleton application was done with the intent of creating a basic applicait
 * Bootstrap 3
 * Full tests with rspec and capybara
 * Gems added
-..* faker (sample_data.rake)
-..* parsley-rails (client side validations)
-..* will_paginate
-..* better_errors (+binding_of_caller)
-..* rspec-rails 
-..* capybara (2.3.0)
-..* factory_girl_rails (factories.rb)
-..* pg and rails_12factor
+⋅⋅* faker (sample_data.rake)
+⋅⋅* parsley-rails (client side validations)
+⋅⋅* will_paginate
+⋅⋅* better_errors (+binding_of_caller)
+⋅⋅* rspec-rails 
+⋅⋅* capybara (2.3.0)
+⋅⋅* factory_girl_rails (factories.rb)
+⋅⋅* pg and rails_12factor
 
 ###### Notes:
     ..*Pending*
